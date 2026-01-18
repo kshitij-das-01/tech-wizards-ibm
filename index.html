@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examination Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="screen active">
+        <div class="login-container">
+            <h1>Examination Portal</h1>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <div id="loginError"></div>
+        </div>
+    </div>
+
+    <!-- Main Exam Layout -->
+    <div id="examContainer" class="exam-container">
+        <!-- Top Bar - Timer -->
+        <div class="top-bar">
+            <div class="timer-display" id="timerDisplay">30:00</div>
+        </div>
+
+        <div class="main-panels">
+            <!-- Left Panel (75%) - Questions -->
+            <div class="left-panel">
+                <div class="subject-tabs">
+                    <button class="tab-btn active" data-subject="cprog">C Programming</button>
+                    <button class="tab-btn" data-subject="coa">COA</button>
+                    <button class="tab-btn" data-subject="frontend">Front-End</button>
+                </div>
+                <div class="question-area">
+                    <div class="question-counter" id="questionCounter"></div>
+                    <div class="question-text" id="questionText"></div>
+                    <div class="options-container" id="optionsContainer"></div>
+                </div>
+            </div>
+
+            <!-- Right Panel (25%) - Navigation -->
+            <div class="right-panel">
+                <div class="question-nav-section">
+                    <div class="question-grid" id="questionGrid"></div>
+                </div>
+                <div class="nav-controls">
+                    <button id="prevBtn" class="nav-btn">Previous</button>
+                    <button id="nextBtn" class="nav-btn">Next</button>
+                    <button id="submitBtn" class="submit-btn">Submit Exam</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Modal -->
+    <div id="resultsModal" class="modal">
+        <div class="modal-content">
+            <h2>Exam Completed</h2>
+            <div class="score-display" id="scoreDisplay"></div>
+            <button id="restartBtn">Take Again</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
